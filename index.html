@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salih Batuhan Şener | Portfolyo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-light: #f9f5eb;
+            --text-light: #121212;
+            --bg-dark: #2a2a2a;
+            --text-dark: #f9f5eb;
+            --accent: #d87458;
+            --section-padding: 5rem 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: var(--bg-light);
+            transition: background-color 0.3s;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark header {
+            background-color: var(--bg-dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        body.dark .logo {
+            color: var(--text-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        body.dark .nav-link {
+            color: var(--text-dark);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .toggles {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        body.dark .toggle-btn {
+            color: var(--text-dark);
+        }
+
+        main {
+            padding-top: 5rem;
+        }
+
+        section {
+            padding: var(--section-padding);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            opacity: 0.3;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .about {
+            text-align: center;
+            padding: 8rem 0 5rem;
+            background: linear-gradient(to bottom, var(--bg-light) 0%, rgba(249, 245, 235, 0.8) 100%);
+        }
+
+        body.dark .about {
+            background: linear-gradient(to bottom, var(--bg-dark) 0%, rgba(42, 42, 42, 0.8) 100%);
+        }
+
+        .detailed-about {
+            padding: 5rem 0;
+            /*background-color: rgba(255, 255, 255, 0.5);*/
+        }
+
+        body.dark .detailed-about {
+            /*background-color: rgba(30, 30, 30, 0.5);*/
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        body.dark .about h1 {
+            color: var(--text-dark);
+        }
+
+        .about h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        body.dark .about h2 {
+            color: #ccc;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .resume-btn.secondary {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(216, 116, 88, 0.3);
+            background-color:#fc8662;
+        }
+
+        .resume-btn.secondary:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .detailed-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark .detailed-content {
+            background-color: rgba(45, 45, 45, 0.8);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark .personal-info {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .info-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .education,
+        .experience,
+        .projects {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        body.dark .card {
+            background-color: rgba(30, 30, 30, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark .card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        body.dark .card h4 {
+            color: #ccc;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark .contact-form {
+            background-color: rgba(30, 30, 30, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(216, 116, 88, 0.2);
+        }
+
+        body.dark .form-input {
+            border-color: #444;
+            background-color: rgba(45, 45, 45, 0.9);
+            color: var(--text-dark);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background-color: #fc8662;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(216, 116, 88, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .social-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .social-link:hover::after {
+            width: 100%;
+        }
+
+        body.dark .social-link {
+            color: var(--text-dark);
+        }
+
+        /* Skills Section Styles */
+        .skills {
+            text-align: center;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .skill-list li {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            transition: color 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark .skill-list li {
+            color: var(--text-dark);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-list li:hover {
+            background-color: rgba(216, 116, 88, 0.1);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .stars i {
+            color: var(--accent);
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .stars i:hover {
+            transform: scale(1.2);
+        }
+
+        .skill-list li span {
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        body.dark footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(30, 30, 30, 0.5);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about h1 {
+                font-size: 2.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                gap: 1.5rem;
+            }
+
+            .social-link {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">SBS</a>
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link" data-tr="hakkimda">Hakkımda</a>
+                <a href="#experience" class="nav-link" data-tr="deneyim">Deneyim</a>
+                <a href="#education" class="nav-link" data-tr="egitim">Eğitim</a>
+                <a href="#skills" class="nav-link" data-tr="yetenekler">Yetenekler</a>
+                <a href="#projects" class="nav-link" data-tr="projeler">Projeler</a>
+                <a href="#contact" class="nav-link" data-tr="iletisim">İletişim</a>
+            </nav>
+            <div class="toggles">
+                <button id="toggle-lang" class="toggle-btn" title="Dil Değiştir / Change Language">
+                    <i class="fas fa-language"></i> <span data-tr="dil">TR</span>
+                </button>
+                <button id="toggle-theme" class="toggle-btn" title="Tema Değiştir / Change Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <!--<div class="profile-image">
+                        <img src="https://via.placeholder.com/200" alt="Salih Batuhan Şener" class="profile-img">
+                    </div>-->
+                    <h1>Salih Batuhan Şener</h1>
+                    <h2 data-tr="unvan">Backend Geliştirici</h2>
+                    <p data-tr="tanitim">Merhaba, ben Salih Batuhan. İzmir Ekonomi Üniversitesi Bilgisayar Programcılığı
+                        bölümü öğrencisiyim. Backend geliştirme alanında uzmanlaşmaya çalışıyorum.</p>
+                    <div class="about-buttons">
+                        <a href="#detailed-about" class="resume-btn" data-tr="daha-fazla">Daha Fazla</a>
+                        <a href="#" class="resume-btn secondary" data-tr="cv-indir">CV İndir</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="detailed-about" class="detailed-about">
+            <div class="container">
+                <h2 class="section-title" data-tr="detayli-hakkimda">Hakkımda</h2>
+                <div class="detailed-content">
+                    <div class="about-text">
+                        <p data-tr="detayli-tanitim">Merhaba, ben Salih Batuhan. İzmir Ekonomi Üniversitesi Bilgisayar
+                            Programcılığı bölümü öğrencisiyim. Backend geliştirme alanında uzmanlaşmaya çalışıyorum.
+                            Veritabanı yönetimi, API geliştirme ve sunucu taraflı programlama konularında çalışmalar
+                            yapıyorum.</p>
+                        <p data-tr="ilgi">Backend teknolojilerine olan ilgimle birlikte, temiz kod yazma, verimli
+                            algoritmalar geliştirme ve modern yazılım mimarilerini uygulama konularında kendimi sürekli
+                            geliştiriyorum.</p>
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-tr="konum">İzmir, Türkiye</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>email@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+90 555 555 5555</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <div class="container">
+                <h2 class="section-title" data-tr="egitim-baslik">Eğitim</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 data-tr="universite">İzmir Ekonomi Üniversitesi</h3>
+                        <h4 data-tr="bolum">Bilgisayar Programcılığı</h4>
+                        <p data-tr="yil-egitim">2023 - Devam Ediyor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title" data-tr="deneyim-baslik">Deneyim</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 data-tr="staj-baslik">Dokuz Eylül Üniversitesi Hastanesi</h3>
+                        <h4 data-tr="firma"></h4>
+                        <p data-tr="staj-tarih">Haziran 2023 - Ağustos 2023</p>
+                        <br>
+                        <p data-tr="staj-aciklama">Dokuz Eylül Üniversitesi Hastanesinin IT departmanında, veritabanı
+                            yönetimi deneyimi kazandım.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title" data-tr="projeler-baslik">Projeler</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 data-tr="proje1-baslik">E-Ticaret API</h3>
+                        <p data-tr="proje1-aciklama">Node.js ve Express.js kullanarak geliştirdiğim tam kapsamlı bir
+                            e-ticaret API'si. Kullanıcı yönetimi, ürün kataloğu, sepet ve sipariş işlemleri, ödeme
+                            entegrasyonu gibi özellikleri içeriyor.</p>
+                        <br>
+                        <p><a href="https://github.com/salihbatuhanşener" class="nav-link"
+                                data-tr="proje1-link">GitHub'da Görüntüle</a></p>
+                    </div>
+                    <div class="card">
+                        <h3 data-tr="proje2-baslik">Blog CMS</h3>
+                        <p data-tr="proje2-aciklama">Python ve Django kullanarak geliştirdiğim bir içerik yönetim
+                            sistemi. Kullanıcıların blog yazıları oluşturup yönetebilmesini, yorum yapabilmesini ve
+                            içerik arayabilmesini sağlıyor.</p>
+                        <br>
+                        <p><a href="https://github.com/salihbatuhanşener" class="nav-link"
+                                data-tr="proje2-link">GitHub'da Görüntüle</a></p>
+                    </div>
+                    <div class="card">
+                        <h3 data-tr="proje3-baslik">Gerçek Zamanlı Sohbet Uygulaması</h3>
+                        <p data-tr="proje3-aciklama">Socket.io ve Express.js kullanarak geliştirdiğim gerçek zamanlı bir
+                            sohbet uygulaması. Özel mesajlaşma, grup sohbetleri ve medya paylaşımı özellikleri
+                            bulunuyor.</p>
+                        <br>
+                        <p><a href="https://github.com/salihbatuhanşener" class="nav-link"
+                                data-tr="proje3-link">GitHub'da Görüntüle</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title" data-tr="yetenekler-baslik">Yetenekler</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Backend</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <span>Node.js</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Express.js</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Python</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Django</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>MongoDB</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <span>HTML5</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>CSS3</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>JavaScript</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Bootstrap</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Diğer</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <span>Git</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>GitHub</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>RESTful API</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Veritabanı Yönetimi</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title" data-tr="iletisim-baslik">İletişim</h2>
+                <form class="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-input" placeholder="Adınız" data-tr="form-ad"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-input" placeholder="E-posta Adresiniz"
+                            data-tr="form-email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" class="form-input" placeholder="Konu" data-tr="form-konu"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-input form-textarea" placeholder="Mesajınız"
+                            data-tr="form-mesaj" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" data-tr="form-gonder">Gönder</button>
+                </form>
+
+                <div class="social-links">
+                    <a href="https://github.com/salihbatuhanşener" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/salihbatuhanşener" class="social-link" target="_blank"
+                        title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year">2025</span> Salih Batuhan Şener. <span data-tr="telif">Tüm hakları
+                    saklıdır.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const toggleThemeBtn = document.getElementById('toggle-theme');
+        const themeIcon = toggleThemeBtn.querySelector('i');
+
+        function setTheme(isDark) {
+            if (isDark) {
+                document.body.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            setTheme(true);
+        }
+
+        // Toggle theme on button click
+        toggleThemeBtn.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('dark');
+            setTheme(!isDark);
+        });
+
+        // Language Toggle
+        const toggleLangBtn = document.getElementById('toggle-lang');
+        const langText = toggleLangBtn.querySelector('span');
+        let isEnglish = false;
+
+        const translations = {
+            'tr': {
+                'hakkimda': 'Hakkımda',
+                'egitim': 'Eğitim',
+                'deneyim': 'Deneyim',
+                'projeler': 'Projeler',
+                'iletisim': 'İletişim',
+                'yetenekler': 'Yetenekler',
+                'yetenekler-baslik': 'Yetenekler',
+                'dil': 'TR',
+                'unvan': 'Backend Geliştirici',
+                'tanitim': 'Merhaba, ben Salih Batuhan. İzmir Ekonomi Üniversitesi Bilgisayar Programcılığı bölümü öğrencisiyim. Backend geliştirme alanında uzmanlaşmaya çalışıyorum.',
+                'daha-fazla': 'Daha Fazla',
+                'detayli-hakkimda': 'Hakkımda',
+                'detayli-tanitim': 'Merhaba, ben Salih Batuhan. İzmir Ekonomi Üniversitesi Bilgisayar Programcılığı bölümü öğrencisiyim. Backend geliştirme alanında uzmanlaşmaya çalışıyorum. Veritabanı yönetimi, API geliştirme ve sunucu taraflı programlama konularında çalışmalar yapıyorum.',
+                'ilgi': 'Backend teknolojilerine olan ilgimle birlikte, temiz kod yazma, verimli algoritmalar geliştirme ve modern yazılım mimarilerini uygulama konularında kendimi sürekli geliştiriyorum.',
+                'konum': 'İzmir, Türkiye',
+                'cv-indir': 'CV İndir',
+                'egitim-baslik': 'Eğitim',
+                'universite': 'İzmir Ekonomi Üniversitesi',
+                'bolum': 'Bilgisayar Programcılığı',
+                'yil-egitim': '2022 - Devam Ediyor',
+                'deneyim-baslik': 'Deneyim',
+                'staj-baslik': 'Backend Geliştirici Stajyeri',
+                'firma': 'Teknoloji Şirketi',
+                'staj-tarih': 'Haziran 2023 - Ağustos 2023',
+                'staj-aciklama': 'Dokuz Eylül Üniversitesi Hastanesinin IT departmanında, veritabanı yönetimi deneyimi kazandım.',
+                'proje-baslik': 'Freelance Geliştirici',
+                'proje-firma': 'Çeşitli Projeler',
+                'proje-tarih': '2022 - Günümüz',
+                'proje-aciklama': 'Çeşitli ölçeklerde backend projeleri geliştirdim. API entegrasyonları, veritabanı optimizasyonu ve güvenlik iyileştirmeleri konularında çalıştım.',
+                'projeler-baslik': 'Projeler',
+                'proje1-baslik': 'E-Ticaret API',
+                'proje1-aciklama': 'Node.js ve Express.js kullanarak geliştirdiğim tam kapsamlı bir e-ticaret API\'si. Kullanıcı yönetimi, ürün kataloğu, sepet ve sipariş işlemleri, ödeme entegrasyonu gibi özellikleri içeriyor.',
+                'proje1-link': 'GitHub\'da Görüntüle',
+                'proje2-baslik': 'Blog CMS',
+                'proje2-aciklama': 'Python ve Django kullanarak geliştirdiğim bir içerik yönetim sistemi. Kullanıcıların blog yazıları oluşturup yönetebilmesini, yorum yapabilmesini ve içerik arayabilmesini sağlıyor.',
+                'proje2-link': 'GitHub\'da Görüntüle',
+                'proje3-baslik': 'Gerçek Zamanlı Sohbet Uygulaması',
+                'proje3-aciklama': 'Socket.io ve Express.js kullanarak geliştirdiğim gerçek zamanlı bir sohbet uygulaması. Özel mesajlaşma, grup sohbetleri ve medya paylaşımı özellikleri bulunuyor.',
+                'proje3-link': 'GitHub\'da Görüntüle',
+                'iletisim-baslik': 'İletişim',
+                'form-ad': 'Adınız',
+                'form-email': 'E-posta Adresiniz',
+                'form-konu': 'Konu',
+                'form-mesaj': 'Mesajınız',
+                'form-gonder': 'Gönder',
+                'telif': 'Tüm hakları saklıdır.'
+            },
+            'en': {
+                'hakkimda': 'About Me',
+                'egitim': 'Education',
+                'deneyim': 'Experience',
+                'projeler': 'Projects',
+                'iletisim': 'Contact',
+                'yetenekler': 'Skills',
+                'yetenekler-baslik': 'Skills',
+                'dil': 'EN',
+                'unvan': 'Backend Developer',
+                'tanitim': 'Hello, I\'m Salih Batuhan. I\'m a Computer Programming student at Izmir University of Economics. I\'m specializing in backend development.',
+                'daha-fazla': 'Learn More',
+                'detayli-hakkimda': 'About Me',
+                'detayli-tanitim': 'Hello, I\'m Salih Batuhan. I\'m a Computer Programming student at Izmir University of Economics. I\'m specializing in backend development. I work on database management, API development, and server-side programming.',
+                'ilgi': 'With my interest in backend technologies, I continuously improve myself in writing clean code, developing efficient algorithms, and implementing modern software architectures.',
+                'konum': 'Izmir, Turkey',
+                'cv-indir': 'Download CV',
+                'egitim-baslik': 'Education',
+                'universite': 'Izmir University of Economics',
+                'bolum': 'Computer Programming',
+                'yil-egitim': '2022 - Present',
+                'deneyim-baslik': 'Experience',
+                'staj-baslik': 'Backend Developer Intern',
+                'firma': 'Technology Company',
+                'staj-tarih': 'June 2023 - August 2023',
+                'staj-aciklama': 'Developed RESTful APIs using Node.js and Express.js. Worked with MongoDB database and gained experience on microservice architecture.',
+                'proje-baslik': 'Freelance Developer',
+                'proje-firma': 'Various Projects',
+                'proje-tarih': '2022 - Present',
+                'proje-aciklama': 'Developed backend projects of various scales. Worked on API integrations, database optimization, and security improvements.',
+                'projeler-baslik': 'Projects',
+                'proje1-baslik': 'E-Commerce API',
+                'proje1-aciklama': 'A comprehensive e-commerce API developed using Node.js and Express.js. It includes features such as user management, product catalog, cart and order processing, payment integration.',
+                'proje1-link': 'View on GitHub',
+                'proje2-baslik': 'Blog CMS',
+                'proje2-aciklama': 'A content management system developed using Python and Django. It allows users to create and manage blog posts, comment, and search for content.',
+                'proje2-link': 'View on GitHub',
+                'proje3-baslik': 'Real-Time Chat Application',
+                'proje3-aciklama': 'A real-time chat application developed using Socket.io and Express.js. It features private messaging, group chats, and media sharing.',
+                'proje3-link': 'View on GitHub',
+                'iletisim-baslik': 'Contact',
+                'form-ad': 'Your Name',
+                'form-email': 'Your Email',
+                'form-konu': 'Subject',
+                'form-mesaj': 'Your Message',
+                'form-gonder': 'Send',
+                'telif': 'All rights reserved.'
+            }
+        };
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-tr]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-tr');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            isEnglish = lang === 'en';
+            localStorage.setItem('language', lang);
+        }
+
+        // Check for saved language preference
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage === 'en') {
+            setLanguage('en');
+            langText.textContent = 'EN';
+        }
+
+        // Toggle language on button click
+        toggleLangBtn.addEventListener('click', () => {
+            if (isEnglish) {
+                setLanguage('tr');
+                langText.textContent = 'TR';
+            } else {
+                setLanguage('en');
+                langText.textContent = 'EN';
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
