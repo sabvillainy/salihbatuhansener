@@ -1155,7 +1155,8 @@ body.dark .timeline-subtitle {
 }
 
 .contact-form .personal-info {
-    display: grid;
+    display: flex;
+    justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 1rem;
@@ -1178,5 +1179,100 @@ body.dark .timeline-subtitle {
     .contact-form .personal-info {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+}
+
+.project-github-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-github-link:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+body.dark .project-github-link {
+    color: var(--text-dark);
+}
+
+.github-profile-message {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+body.dark .github-profile-message {
+    color: var(--text-dark);
+}
+
+.github-profile-message a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.github-profile-message a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.github-profile-message a:hover::after {
+    width: 100%;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.tech-tag {
+    background-color: rgba(216, 116, 88, 0.1);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(216, 116, 88, 0.2);
+}
+
+.tech-tag:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+body.dark .tech-tag {
+    background-color: rgba(216, 116, 88, 0.15);
+    border-color: rgba(216, 116, 88, 0.3);
+}
+
+body.dark .tech-tag:hover {
+    background-color: var(--accent);
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .tech-tags {
+        gap: 0.4rem;
+    }
+
+    .tech-tag {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.6rem;
     }
 }
