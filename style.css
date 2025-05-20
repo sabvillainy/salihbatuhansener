@@ -200,10 +200,12 @@ body.dark .about {
 }
 
 .about h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-light);
+    opacity: 1;
+    visibility: visible;
 }
 
 body.dark .about h1 {
@@ -569,7 +571,7 @@ body.dark footer {
 
 @media (max-width: 768px) {
     .nav-menu {
-        gap: 1rem;
+        display: none;
     }
 
     .section-title {
@@ -578,18 +580,152 @@ body.dark footer {
 
     .about h1 {
         font-size: 2.5rem;
+        margin-top: 2rem;
     }
 
     .card {
         padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 40px);
+        margin-left: 40px !important;
+        padding: 1.2rem;
+        min-width: 280px;
+        margin-right: 0 !important;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 40px !important;
+        margin-right: 0 !important;
+    }
+
+    .timeline-content::before {
+        left: -30px !important;
+    }
+
+    .timeline-title {
+        font-size: 1.2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .timeline-subtitle {
+        font-size: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .timeline-description {
+        font-size: 0.95rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-list li {
+        padding: 0.8rem;
+    }
+
+    .projects .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-input {
+        font-size: 1rem;
     }
 
     .social-links {
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .social-link {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .timeline-content {
+        width: calc(100% - 35px);
+        margin-left: 35px !important;
+        margin-right: 0 !important;
+        padding: 1rem;
+        min-width: 250px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 35px !important;
+        margin-right: 0 !important;
+    }
+
+    .timeline-content::before {
+        left: -25px !important;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+
+    .timeline-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .timeline-description {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .contact-form {
+        padding: 1.2rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        padding: 1.8rem;
     }
 }
 
@@ -1195,6 +1331,10 @@ body.dark .timeline-subtitle {
     transition: all 0.3s ease;
 }
 
+.project-github-link i {
+    font-size: 2.5rem;
+}
+
 .project-github-link:hover {
     color: var(--accent);
     transform: translateY(-3px);
@@ -1380,6 +1520,49 @@ p,
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
+}
+
+.cv-message {
+    font-style: italic;
+    color: var(--accent);
+    margin: 2rem 0 1rem !important;
+}
+
+.cv-download-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.cv-download-container .resume-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.cv-download-container .resume-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(216, 116, 88, 0.3);
+}
+
+body.dark .cv-message {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .cv-message {
+        font-size: 1rem;
+        margin: 1.5rem 0 1rem !important;
+    }
+
+    .cv-download-container {
+        margin: 1rem 0;
+    }
+
+    .cv-download-container .resume-btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 1rem;
+    }
 }
 
 /* Form Text Styles */

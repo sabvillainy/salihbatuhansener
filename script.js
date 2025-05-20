@@ -79,10 +79,11 @@ const translations = {
         'more-projects': 'Daha fazla proje için',
         'visit-github': 'GitHub profilimi ziyaret edebilirsiniz.',
         'other-skills': 'Diğer',
-        'developed-by': 'tarafından geliştirilmiştir.',
+        'developed-by': 'Sabri Yılmaz tarafından geliştirilmiştir.',
         'veritabani-yonetimi': 'Veritabanı Yönetimi',
         'algoritma-kurma': 'Algoritma Kurma',
-        'game-design': 'Oyun Tasarımı '
+        'game-design': 'Oyun Tasarımı ',
+        'cv-mesaj': 'Eğer ilginizi çektiyse, detaylı CV\'mi inceleyebilirsiniz.',
     },
     'en': {
         'hakkimda': 'About Me',
@@ -129,11 +130,12 @@ const translations = {
         'more-projects': 'For more projects visit',
         'visit-github': 'my GitHub profile.',
         'other-skills': 'Other',
-        'developed-by': 'developed by',
+        'developed-by': 'Developed by Sabri Yılmaz',
         'veritabani-yonetimi': 'Database Management',
         'algoritma-kurma': 'Algorithm Creation',
         'kullanilan-teknolojiler': 'Technologies Used',
-        'game-design': 'Game Design'
+        'game-design': 'Game Design',
+        'cv-mesaj': 'If you are interested, you can view my detailed CV.'
     }
 };
 
