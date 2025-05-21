@@ -560,6 +560,23 @@ footer {
     z-index: 1;
 }
 
+footer a{
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+footer a:hover{
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 600;
+    transform: translateY(-3px);
+    
+
+}
+
 body.dark footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     background-color: var(--bg-dark);
@@ -1500,7 +1517,7 @@ p,
     font-weight: 400;
 }
 
-.timeline-description {
+.timeline-subtitle {
     font-style: italic;
 }
 
