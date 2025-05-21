@@ -597,7 +597,23 @@ body.dark footer {
 
     .about h1 {
         font-size: 2.5rem;
-        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+
+    .about h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .about-content {
+        padding-top: 2rem;
     }
 
     .card {
@@ -685,6 +701,23 @@ body.dark footer {
 
     .about h1 {
         font-size: 2rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        padding: 0 0.5rem;
+    }
+
+    .about h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .about p {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    .about-content {
+        padding-top: 1.5rem;
     }
 
     .timeline-content {
@@ -1253,7 +1286,7 @@ body.dark .timeline-subtitle {
     }
 
     .about h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .timeline-content {
