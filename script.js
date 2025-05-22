@@ -85,6 +85,9 @@ const translations = {
         'algoritma-kurma': 'Algoritma Kurma',
         'game-design': 'Oyun Tasarımı ',
         'cv-mesaj': 'Eğer ilginizi çektiyse, detaylı CV\'mi inceleyebilirsiniz.',
+        '3d-title': 'Sıkıcı mı buldunuz?',
+        '3d-text': 'Three.js kullanarak tasarladığım interaktif 3D portfolyo deneyimimi inceleyebilirsiniz.\n\n(Bu deneyim sadece masaüstü tarayıcılar için geçerlidir.)',
+        '3d-button': '3D Deneyimi Keşfet'
     },
     'en': {
         'hakkimda': 'About Me',
@@ -137,7 +140,10 @@ const translations = {
         'algoritma-kurma': 'Algorithm Creation',
         'kullanilan-teknolojiler': 'Technologies Used',
         'game-design': 'Game Design',
-        'cv-mesaj': 'If you are interested, you can view my detailed CV.'
+        'cv-mesaj': 'If you are interested, you can view my detailed CV.',
+        '3d-title': 'FOUND IT BORING?',
+        '3d-text': 'Check out my interactive 3D portfolio experience designed with Three.js.\n\n(This experience is only available for desktop browsers.)',
+        '3d-button': 'Explore the 3D Experience'
     }
 };
 
@@ -330,4 +336,40 @@ document.querySelectorAll('.nav-link').forEach(link => {
         navMenu.classList.remove('active');
         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
     });
+});
+
+// Cursor Light Effect
+const cursorLight = document.querySelector('.cursor-light');
+const experience3d = document.querySelector('.experience-3d');
+
+experience3d.addEventListener('mousemove', (e) => {
+    const rect = experience3d.getBoundingClientRect();
+    const x = e.clientX;
+    const y = e.clientY;
+
+    cursorLight.style.left = `${x}px`;
+    cursorLight.style.top = `${y}px`;
+    cursorLight.style.opacity = '1';
+});
+
+experience3d.addEventListener('mouseleave', () => {
+    cursorLight.style.opacity = '0';
+});
+
+experience3d.addEventListener('mouseenter', () => {
+    cursorLight.style.opacity = '1';
+});
+
+// Experience Button Hover Effect
+const experienceBtn = document.querySelector('.experience-btn');
+experienceBtn.addEventListener('mouseenter', () => {
+    cursorLight.style.width = '300px';
+    cursorLight.style.height = '300px';
+    cursorLight.style.background = 'radial-gradient(circle, rgba(216, 116, 88, 0.25) 0%, transparent 70%)';
+});
+
+experienceBtn.addEventListener('mouseleave', () => {
+    cursorLight.style.width = '200px';
+    cursorLight.style.height = '200px';
+    cursorLight.style.background = 'radial-gradient(circle, rgba(216, 116, 88, 0.15) 0%, transparent 70%)';
 }); 
