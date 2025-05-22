@@ -365,11 +365,12 @@ const experienceBtn = document.querySelector('.experience-btn');
 experienceBtn.addEventListener('mouseenter', () => {
     cursorLight.style.width = '300px';
     cursorLight.style.height = '300px';
-    cursorLight.style.background = 'radial-gradient(circle, rgba(216, 116, 88, 0.25) 0%, transparent 70%)';
+    cursorLight.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%)';
 });
 
 experienceBtn.addEventListener('mouseleave', () => {
     cursorLight.style.width = '200px';
     cursorLight.style.height = '200px';
-    cursorLight.style.background = 'radial-gradient(circle, rgba(216, 116, 88, 0.15) 0%, transparent 70%)';
+    cursorLight.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)';
+    cursorLight.style.opacity = '1';
 }); 
